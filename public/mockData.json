@@ -1,0 +1,87 @@
+[
+    {
+      "id": 1,
+      "model": "Model S",
+      "image": "/images/model-s-black.jpg",
+      "price": "$89,990",
+      "description": "The ultimate electric sedan with superior range and performance.",
+      "variants": ["Standard", "Long Range", "Plaid"],
+      "colors": ["Red", "Blue", "Black", "White","Grey"],
+      "features": [
+        "0-60 mph in 1.99 seconds",
+        "396 miles range",
+        "Top speed of 200 mph"
+      ]
+    },
+    {
+      "id": 2,
+      "model": "Model 3",
+      "image": "/images/model-3-red.jpg",
+      "price": "$39,990",
+      "description": "Affordable electric sedan with cutting-edge features.",
+      "variants": ["Standard", "Performance"],
+      "colors":  ["Red", "Blue", "Black", "White","Grey"],
+      "features": [
+        "0-60 mph in 3.1 seconds",
+        "358 miles range",
+        "Top speed of 162 mph"
+      ]
+    },
+    {
+      "id": 3,
+      "model": "Model X",
+      "image": "/images/model-x-blue.jpg",
+      "price": "$99,990",
+      "description": "The safest SUV with falcon-wing doors and unparalleled performance.",
+      "variants": ["Long Range", "Plaid"],
+      "colors":  ["Red", "Blue", "Black", "White","Grey"],
+      "features": [
+        "0-60 mph in 2.5 seconds",
+        "333 miles range",
+        "Top speed of 155 mph"
+      ]
+    },
+    {
+      "id": 4,
+      "model": "Model Y",
+      "image": "/images/model-y-white.jpg",
+      "price": "$47,490",
+      "description": "Versatile electric SUV with impressive range and performance.",
+      "variants": ["Standard", "Performance"],
+      "colors":  ["Red", "Blue", "Black", "White","Grey"],
+      "features": [
+        "0-60 mph in 3.5 seconds",
+        "330 miles range",
+        "Top speed of 155 mph"
+      ]
+    },
+    {
+      "id": 5,
+      "model": "Cybertruck",
+      "image": "/images/model-cybertruck-grey.jpg",
+      "price": "$39,900",
+      "description": "The revolutionary electric truck with exceptional durability and utility.",
+      "variants": ["Single Motor", "Dual Motor", "Tri Motor"],
+      "colors": ["Steel"],
+      "features": [
+        "0-60 mph in 2.9 seconds",
+        "500+ miles range",
+        "14,000 lbs towing capacity"
+      ]
+    },
+    {
+      "id": 6,
+      "model": "Roadster",
+      "image": "/images/model-roadster-red.jpg",
+      "price": "$200,000",
+      "description": "The next-generation electric supercar with unmatched performance.",
+      "variants": ["Base"],
+      "colors": ["Red", "White", "Black"],
+      "features": [
+        "0-60 mph in 1.9 seconds",
+        "620 miles range",
+        "Top speed of 250+ mph"
+      ]
+    }
+  ]
+  
