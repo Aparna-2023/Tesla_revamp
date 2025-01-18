@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Input, InputGroup } from "reactstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { Input, Row, Col } from "reactstrap";
 
 export const ProductListing = () => {
   const [products, setProducts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(""); // State to store the search query
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
-  // Fetch data from mockData.json
   useEffect(() => {
     axios
       .get("/mockData.json")
@@ -24,47 +23,53 @@ export const ProductListing = () => {
     navigate(`/vehicles/${id}`);
   };
 
-  // Filter products based on the search query
   const filteredProducts = products.filter((product) =>
-    product.model.toLowerCase().includes(searchQuery.toLowerCase()) // Match the search query with product model (case-insensitive)
+    product.model.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className="product-listing">
-      <div>
-        <InputGroup>
-          <Input
-            type="text"
-            name="search"
-            placeholder="Search.."
-            className="form-control"
-            value={searchQuery} 
-            onChange={(e) => setSearchQuery(e.target.value)} 
-          />
-        </InputGroup>
+      <div className="search-bar mb-3">
+        <Input
+          type="text"
+          name="search"
+          placeholder="Search.."
+          className="search-input"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
       </div>
-      <div className="product-cards">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="product-card"
-            onClick={() => handleCarClick(product.id)}
-          >
-            <img
-              src={product.image}
-              alt={product.model}
-              className="product-image"
-            />
-            <div className="product-info">
-              <h3 className="product-model">{product.model}</h3>
-              <div className="price-wrap">
-                <p className="product-price">{product.price}</p>
-                <button className="view-details-button">View Details</button>
+      {filteredProducts.length === 0 ? (
+        <div className="no-data-message">No data found</div>
+      ) : (
+        <Row className="mt-4">
+          {filteredProducts.map((product) => (
+            <Col key={product.id} md={3} className="mb-4">
+              <div
+                className="product-card"
+                onClick={() => handleCarClick(product.id)}
+              >
+                <img
+                  src={product.image}
+                  alt={product.model}
+                  className="product-image"
+                />
+                <div className="product-info">
+                  <h3 className="product-model">{product.model}</h3>
+                  <div className="learn-more-wrap">
+                    <Link to="" className="learn-more">
+                      Learn More
+                    </Link>
+                    <Link to="" className="learn-more">
+                      Order
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            </Col>
+          ))}
+        </Row>
+      )}
     </div>
   );
 };
