@@ -1,11 +1,10 @@
 import "./App.css";
 import { Routeshandler } from "./Routes";
 
-
 function App() {
   return (
     <>
-      <Routeshandler/>
+      <Routeshandler />
     </>
   );
 }
