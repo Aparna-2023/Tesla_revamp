@@ -294,8 +294,15 @@ body {
   max-width: 300px;
 }
 
+.search-bar{
+  display: flex;
+  gap: 20px;
+}
 
-
+.bi-funnel, .bi-arrow-clockwise {
+  font-size: 1.5rem;
+  color: #666;
+}
 .product-card {
   border: 1px solid #ccc;
   border-radius: 10px;
