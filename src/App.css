@@ -330,11 +330,19 @@ body {
   justify-content: space-around;
 }
 
-.learn-more {
+.learn-more, .order-now-btn {
   color: #2e2e2e;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+  .button-link {
+    text-decoration: underline;
+    transition: background-color 0.3s ease;
+    border: none;
+    background: none; 
+  }
+
 
 .no-data-message {
   text-align: center;
@@ -444,6 +452,16 @@ body {
 .lease-purchase {
   color: #5C5E62;
   text-align: center;
+}
+.feature-btn{
+  width: 140px;
+  padding: 5px;
+  color: #393C41;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  background-color: #d3d6d8;
 }
 
 /* Responsive Design */

@@ -2,12 +2,15 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Row, Col } from "reactstrap";
+import { ModalContainer } from "../Components/Modal/ModalContainer";
+import { FeatureModal } from "./FeatureModal";
 
 export const CarDetails = () => {
     const { id } = useParams();
     const [car, setCar] = useState(null);
     const [selectedColor, setSelectedColor] = useState("");
     const [currentImage, setCurrentImage] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
         axios
@@ -28,6 +31,7 @@ export const CarDetails = () => {
         const imageName = car?.model.toLowerCase().replace(" ", "-");
         setCurrentImage(`/images/${imageName}-${color.toLowerCase()}.jpg`);
     };
+
 
     if (!car) {
         return <p>Loading...</p>;
@@ -73,8 +77,9 @@ export const CarDetails = () => {
                         <p>Include est. incentives of $7,500 and 5-year</p>
                         <p>gas savings of $5,000</p>
                         <p className="car-description">Edit Terms & Savings</p>
+                        <button className="feature-btn" onClick={() => setIsOpen(true)}>Feature Details</button>
                     </div>
-                        <h5 className="color-heading">Included</h5>
+                    <h5 className="color-heading">Included</h5>
                     <div className="color-selector">
                         {car?.colors.map((color, index) => (
                             <div
@@ -91,6 +96,11 @@ export const CarDetails = () => {
                     </div>
                 </Col>
             </Row>
+            <ModalContainer isOpen={isOpen} setIsopen={setIsOpen} title="">
+                <FeatureModal
+                    image={car?.image}
+                    description={car?.description} />
+            </ModalContainer>
         </div>
     );
 };

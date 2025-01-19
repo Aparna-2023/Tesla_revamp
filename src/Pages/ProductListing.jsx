@@ -19,7 +19,7 @@ export const ProductListing = () => {
       });
   }, []);
 
-  const handleCarClick = (id) => {
+  const handleClick = (id) => {
     navigate(`/vehicles/${id}`);
   };
 
@@ -47,12 +47,12 @@ export const ProductListing = () => {
             <Col key={product.id} md={3} className="mb-4">
               <div
                 className="product-card"
-                onClick={() => handleCarClick(product.id)}
               >
                 <img
                   src={product.image}
                   alt={product.model}
                   className="product-image"
+                  onClick={() => handleClick(product.id)}
                 />
                 <div className="product-info">
                   <h3 className="product-model">{product.model}</h3>
@@ -60,9 +60,9 @@ export const ProductListing = () => {
                     <Link to="" className="learn-more">
                       Learn More
                     </Link>
-                    <Link to="" className="learn-more">
+                    <button to="" className="order-now-btn button-link" onClick={() => handleClick(product.id)}>
                       Order
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

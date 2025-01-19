@@ -1,108 +1,98 @@
 [
-    {
-      "id": 1,
-      "model": "Model S",
-      "image": "/images/model-s-black.jpg",
-      "price": "$89,990",
-      "range": "402 ml",
-      "top_speed": "130 mph",
-      "mph": "3.1 sec",
-      "description": "The ultimate electric sedan with superior range and performance.",
-      "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
-      "variants": ["Standard", "Long Range", "Plaid"],
-      "colors": ["Red", "Blue", "Black", "White","Grey"],
-      "features": [
-        "All-Wheel Drive ",
-        "Plaid"
-      ]
-    },
-    {
-      "id": 2,
-      "model": "Model 3",
-      "image": "/images/model-3-red.jpg",
-      "price": "$39,990",
-      "range": "363 ml",
-      "top_speed": "125 mph",
-      "mph": "4.9 sec",
-      "description": "Affordable electric sedan with cutting-edge features.",
-      "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
-      "variants": ["Standard", "Performance"],
-      "colors":  ["Red", "Blue", "Black", "White","Grey"],
-      "features": [
-        "Long Range Rear-Wheel Drive",
-        "Long Range All-Wheel Drive",
-        "Performance All-Wheel Drive"
-      ]
-    },
-    {
-      "id": 3,
-      "model": "Model X",
-      "image": "/images/model-x-blue.jpg",
-      "price": "$99,990",
-      "range": "337 ml",
-      "top_speed": "135 mph",
-      "mph": "6.5 sec",
-      "description": "The safest SUV with falcon-wing doors and unparalleled performance.",
-      "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
-      "variants": ["Long Range", "Plaid"],
-      "colors":  ["Red", "Blue", "Black", "White","Grey"],
-      "features": [
-        "All-Wheel Drive ",
-        "Plaid"
-      ]
-    },
-    {
-      "id": 4,
-      "model": "Model Y",
-      "image": "/images/model-y-white.jpg",
-      "price": "$47,490",
-      "range": "402 ml",
-      "top_speed": "130 mph",
-      "mph": "3.1 sec",
-      "description": "Versatile electric SUV with impressive range and performance.",
-      "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
-      "variants": ["Standard", "Performance"],
-      "colors":  ["Red", "Blue", "Black", "White","Grey"],
-      "features": [
-        "Long Range Rear-Wheel Drive",
-        "Long Range All-Wheel Drive",
-        "Performance All-Wheel Drive"
-      ]
-    },
-    {
-      "id": 5,
-      "model": "Cybertruck",
-      "image": "/images/model-cybertruck-grey.jpg",
-      "price": "$39,900",
-      "range": "402 ml",
-      "top_speed": "130 mph",
-      "mph": "3.1 sec",
-      "description": "The revolutionary electric truck with exceptional durability and utility.",
-      "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
-      "variants": ["Single Motor", "Dual Motor", "Tri Motor"],
-      "colors": ["Steel"],
-      "features": [
-        "All-Wheel Drive ",
-        "Cyberbeast"
-      ]
-    },
-    {
-      "id": 6,
-      "model": "Roadster",
-      "image": "/images/model-roadster-red.jpg",
-      "price": "$200,000",
-      "range": "402 ml",
-      "top_speed": "130 mph",
-      "mph": "3.1 sec",
-      "description": "The next-generation electric supercar with unmatched performance.",
-      "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
-      "variants": ["Base"],
-      "colors": ["Red", "White", "Black"],
-      "features": [
-        "Long Range Rear-Wheel Drive",
-        "Long Range All-Wheel Drive",
-        "Performance All-Wheel Drive"
-      ]
-    }
-  ]
-  
+  {
+    "id": 1,
+    "model": "Model S",
+    "image": "/images/model-s-black.jpg",
+    "price": "$89,990",
+    "range": "402 ml",
+    "top_speed": "130 mph",
+    "mph": "3.1 sec",
+    "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
+    "variants": ["Standard", "Long Range", "Plaid"],
+    "colors": ["Red", "Blue", "Black", "White", "Grey"],
+    "features": ["All-Wheel Drive ", "Plaid"],
+    "description": "The Tesla Model S is a luxury electric sedan known for its exceptional performance, advanced technology, and impressive range. It features a cutting-edge dual motor or tri-motor powertrain, delivering up to 1,020 horsepower with a 0-60 mph acceleration in just 1.99 seconds for the Plaid model. The car offers a maximum range of up to 402 miles on a single charge, ensuring long-distance travel without frequent charging."
+  },
+  {
+    "id": 2,
+    "model": "Model 3",
+    "image": "/images/model-3-red.jpg",
+    "price": "$39,990",
+    "range": "363 ml",
+    "top_speed": "125 mph",
+    "mph": "4.9 sec",
+    "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
+    "variants": ["Standard", "Performance"],
+    "colors": ["Red", "Blue", "Black", "White", "Grey"],
+    "features": [
+      "Long Range Rear-Wheel Drive",
+      "Long Range All-Wheel Drive",
+      "Performance All-Wheel Drive"
+    ],
+    "description": "The Tesla Model 3 is a sleek and affordable electric sedan designed for maximum efficiency and performance. It offers an impressive range of up to 358 miles on a single charge, making it suitable for long-distance travel. With a dual-motor all-wheel-drive option, the Model 3 accelerates from 0 to 60 mph in as little as 3.1 seconds. "
+  },
+  {
+    "id": 3,
+    "model": "Model X",
+    "image": "/images/model-x-blue.jpg",
+    "price": "$99,990",
+    "range": "337 ml",
+    "top_speed": "135 mph",
+    "mph": "6.5 sec",
+    "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
+    "variants": ["Long Range", "Plaid"],
+    "colors": ["Red", "Blue", "Black", "White", "Grey"],
+    "features": ["All-Wheel Drive ", "Plaid"],
+    "description": "The Tesla Model X is a luxurious electric SUV renowned for its exceptional performance, innovative technology, and unique design. It features falcon-wing doors, which provide a dramatic and practical entry for passengers. Offering a range of up to 348 miles on a single charge, the Model X is ideal for families and long-distance travelers."
+  },
+  {
+    "id": 4,
+    "model": "Model Y",
+    "image": "/images/model-y-white.jpg",
+    "price": "$47,490",
+    "range": "402 ml",
+    "top_speed": "130 mph",
+    "mph": "3.1 sec",
+    "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
+    "variants": ["Standard", "Performance"],
+    "colors": ["Red", "Blue", "Black", "White", "Grey"],
+    "features": [
+      "Long Range Rear-Wheel Drive",
+      "Long Range All-Wheel Drive",
+      "Performance All-Wheel Drive"
+    ],
+    "description": "The Tesla Model Y is a versatile and efficient electric compact SUV designed to meet the needs of families and adventure-seekers alike. Offering a range of up to 330 miles on a single charge, it balances practicality with Tesla's signature performance. The Model Y can accelerate from 0 to 60 mph in just 3.5 seconds with the Performance version, while its dual-motor all-wheel drive ensures stability and traction in all conditions."
+  },
+  {
+    "id": 5,
+    "model": "Cybertruck",
+    "image": "/images/model-cybertruck-grey.jpg",
+    "price": "$39,900",
+    "range": "402 ml",
+    "top_speed": "130 mph",
+    "mph": "3.1 sec",
+    "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
+    "variants": ["Single Motor", "Dual Motor", "Tri Motor"],
+    "colors": ["Steel"],
+    "features": ["All-Wheel Drive ", "Cyberbeast"],
+    "description": "The Tesla Cybertruck is a groundbreaking all-electric pickup truck that combines rugged durability with futuristic design and cutting-edge technology. With its angular, stainless steel exoskeleton, the Cybertruck stands out as a bold departure from traditional truck aesthetics. It boasts exceptional durability, including bulletproof glass and a highly resilient body structure designed to withstand extreme conditions."
+  },
+  {
+    "id": 6,
+    "model": "Roadster",
+    "image": "/images/model-roadster-red.jpg",
+    "price": "$200,000",
+    "range": "402 ml",
+    "top_speed": "130 mph",
+    "mph": "3.1 sec",
+    "lease_purchase": "$7,500 down, 36 months, 10,000 miles",
+    "variants": ["Base"],
+    "colors": ["Red"],
+    "features": [
+      "Long Range Rear-Wheel Drive",
+      "Long Range All-Wheel Drive",
+      "Performance All-Wheel Drive"
+    ],
+    "description": "The Tesla Roadster is a high-performance all-electric sports car that combines breathtaking speed, stunning design, and innovative technology. With a top speed exceeding 250 mph and an acceleration from 0 to 60 mph in under 1.9 seconds, the Roadster is the fastest production car ever built. Its all-electric range is impressive, offering up to 620 miles on a single charge, making it perfect for long-distance driving without sacrificing performance."
+  }
+]

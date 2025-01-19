@@ -21,7 +21,7 @@ export const LandingPage = () => {
             <section className="cybertruck-banner">
                 <div className="cybertruck-container">
                     <div>
-                    <img src="/images/cybertruck.png" alt="Cybertruck Logo" className="cybertruck-logo" />
+                        <img src="/images/cybertruck.png" alt="Cybertruck Logo" className="cybertruck-logo" />
                     </div>
                     <div>
                         <Button>Book a Ride</Button>
@@ -76,18 +76,18 @@ export const LandingPage = () => {
                 </div>
             </section>
             <section className="footer-wrap">
-            <Row>
-                <Col md={2} className="footer-logo">
-                    <img src="/images/footer-img.png" alt="Tesla Logo" />
-                </Col>
+                <Row>
+                    <Col md={2} className="footer-logo">
+                        <img src="/images/footer-img.png" alt="Tesla Logo" />
+                    </Col>
 
-                <Col md={10} className="footer-text">
-                    <div>
-                        <p>"Driving innovation accelerating sustainability. At Tesla, we are committed to transforming the way the world moves. From cutting-edge electric vehicles to sustainable energy solutions, we empower individuals and communities to embrace a cleaner, greener future."</p>
-                        <p className="text-end">Tesla - where the future moves with you</p>
-                    </div>
-                </Col>
-            </Row>
+                    <Col md={10} className="footer-text">
+                        <div>
+                            <p>"Driving innovation accelerating sustainability. At Tesla, we are committed to transforming the way the world moves. From cutting-edge electric vehicles to sustainable energy solutions, we empower individuals and communities to embrace a cleaner, greener future."</p>
+                            <p className="text-end">Tesla - where the future moves with you</p>
+                        </div>
+                    </Col>
+                </Row>
             </section>
         </>
     )
