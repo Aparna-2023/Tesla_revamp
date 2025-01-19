@@ -5,7 +5,6 @@ import { Row, Col } from "reactstrap";
 export const LandingPage = () => {
     return (
         <>
-            {/* Banner */}
             <section className="banner-container">
                 <div className="banner-background ">
                     <div className="banner-content">
@@ -17,7 +16,6 @@ export const LandingPage = () => {
                     </div>
                 </div>
             </section>
-            {/* section-2 */}
             <section className="cybertruck-banner">
                 <div className="cybertruck-container">
                     <div>
@@ -29,9 +27,6 @@ export const LandingPage = () => {
                     </div>
                 </div>
             </section>
-
-            {/* section-3 */}
-
             <section className="tesla-banner">
                 <div className="heading-container">
                     <h3 className="banner-heading">
@@ -41,7 +36,6 @@ export const LandingPage = () => {
                         Experience <span className="subheading-highlight">Full Self-Driving</span> In Any Tesla Vehicle With A Test Drive
                     </p>
                 </div>
-                {/* glassmorphism */}
                 <div className="cta-container">
                     <p className="cta-text">
                         Take a Supervised Demo Drive Of Tesla's Full Self Driving In Any Model
@@ -49,7 +43,6 @@ export const LandingPage = () => {
                     <Link to="/" className="cta-button">EXPERIENCE NOW</Link>
                 </div>
             </section>
-            {/* section 4 */}
             <section className="model-x-banner">
                 <div className="model-x-container">
                     <div>
@@ -62,7 +55,6 @@ export const LandingPage = () => {
                     </div>
                 </div>
             </section>
-            {/* section 5 */}
             <section className="model-3-banner">
                 <div className="model-x-container">
                     <div>

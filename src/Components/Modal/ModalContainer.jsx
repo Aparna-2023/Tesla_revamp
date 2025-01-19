@@ -7,10 +7,9 @@ export const ModalContainer = ({ isOpen, setIsopen, title = "", children, classn
             scrollable={true}
             centered={true}
             toggle={() => setIsopen(false)}
-            className= {classname}
+            className={classname}
         >
             <ModalHeader toggle={() => setIsopen(false)}>{title}
-
             </ModalHeader>
             <ModalBody>{children}</ModalBody>
         </Modal>

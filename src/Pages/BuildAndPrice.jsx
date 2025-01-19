@@ -1,31 +1,29 @@
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button, Row, Col } from "reactstrap";
-import { ModalContainer } from "../Components/Modal/ModalContainer";
-import { FeatureModal } from "./FeatureModal";
+import { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
+import { Button, Col, Row } from "reactstrap"
 
-export const CarDetails = () => {
+export const BuildAndPrice = () => {
     const { id } = useParams();
-    const navigate = useNavigate();
-    const [car, setCar] = useState(null);
+    const location = useLocation();
+    const car = location?.state?.car;
+    const [CarDetails, setCarDetails] = useState(null);
     const [selectedColor, setSelectedColor] = useState("");
+    const [selectedWheel, setSelectedWheel] = useState("");
     const [currentImage, setCurrentImage] = useState("");
-    const [isOpen, setIsOpen] = useState(false);
+
+
 
     useEffect(() => {
         axios
-            .get("/mockData.json")
+            .get("/BuildAndPriceData.json")
             .then((response) => {
                 const carData = response.data.find((item) => item.id === parseInt(id));
-                setCar(carData);
-                setSelectedColor(carData?.colors[0]);
-                setCurrentImage(carData?.image);
+                setCarDetails(carData)
             })
-            .catch((error) => {
-                console.error("Error fetching car details:", error);
-            });
-    }, [id]);
+    }, [id])
+
+    console.log(car, "build-container");
 
     const handleColorChange = (color) => {
         setSelectedColor(color);
@@ -33,22 +31,27 @@ export const CarDetails = () => {
         setCurrentImage(`/images/${imageName}-${color.toLowerCase()}.jpg`);
     };
 
-    const handleBuildAndPrice = () => {
-        navigate(`/vehicles/design/${car.id}`, { state: { car } });
+    // Handle wheel selection and update the car image
+    const handleWheelChange = (wheelColor) => {
+        setSelectedWheel(wheelColor);
+        if (selectedColor) {
+            const imageName = car?.model.toLowerCase().replace(" ", "-");
+            setCurrentImage(`/images/${imageName}-${selectedColor.toLowerCase()}-wheel-${wheelColor.toLowerCase()}.jpg`);
+        }
     };
 
-    if (!car) {
-        return <p>Loading...</p>;
-    }
-
     return (
-        <div className="car-details-container">
+
+        <div className="build-container">
             <Row>
+                {/* Image Section */}
                 <Col md={8} className="car-image">
-                    <img src={currentImage} alt={car?.model} />
+                {currentImage && <img src= {car?.image || currentImage} alt="Selected Car" className="selected-car-image" />}
                 </Col>
+
+                {/* Details Section */}
                 <Col md={4} className="car-details">
-                    <h2 className="text-center">{car?.model}</h2>
+                    <h2 className="text-center">{CarDetails?.model}</h2>
                     <div className="features-container">
                         <div>
                             <h5 className="feature-item">{car?.range}</h5>
@@ -63,6 +66,7 @@ export const CarDetails = () => {
                             <p className="feature-name">0-60 mph</p>
                         </div>
                     </div>
+
                     <div className="features-wrap">
                         {car.features.map((feature, index) => (
                             <div key={index} className="features">{feature}</div>
@@ -77,11 +81,11 @@ export const CarDetails = () => {
                         <p>Include est. incentives of $7,500 and 5-year</p>
                         <p>gas savings of $5,000</p>
                         <p className="car-description">Edit Terms & Savings</p>
-                        <button className="feature-btn" onClick={() => setIsOpen(true)}>Feature Details</button>
                     </div>
+
                     <h5 className="color-heading">Included</h5>
                     <div className="color-selector">
-                        {car?.colors.map((color, index) => (
+                        {CarDetails?.colors.map((color, index) => (
                             <div
                                 key={index}
                                 className={`color-circle ${selectedColor === color ? "selected" : ""}`}
@@ -90,17 +94,31 @@ export const CarDetails = () => {
                             ></div>
                         ))}
                     </div>
+                    <div className="wheel-image-section text-center">
+                        <h5 className="color-heading">Included</h5>
+                        <div className="wheel-options">
+                            {CarDetails?.wheels.map((wheel, index) => (
+                                <div
+                                    key={index}
+                                    className={`wheel-option ${selectedWheel === wheel.color ? "selected" : ""}`}
+                                    onClick={() => handleWheelChange(wheel?.color)}
+                                >
+                                    <img
+                                        src={wheel?.image}
+                                        alt={`${wheel.color} wheel`}
+                                        className="wheel-image"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                     <div className="order-button-wrap">
-                        <h3>{car?.price}</h3>
-                        <Button className="order-button" onClick={handleBuildAndPrice}>Build and Price</Button>
+                        <h3>""</h3>
+                        <Button className="order-button">OrderNow</Button>
                     </div>
                 </Col>
             </Row>
-            <ModalContainer isOpen={isOpen} setIsopen={setIsOpen} title="">
-                <FeatureModal
-                    image={car?.image}
-                    description={car?.description} />
-            </ModalContainer>
+
         </div>
-    );
-};
+    )
+}  

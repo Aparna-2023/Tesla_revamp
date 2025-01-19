@@ -4,7 +4,7 @@ import { Footer } from "./Footer/Footer";
 
 
 export const LayoutContainer = () => {
-    return (
+	return (
 		<>
 			<AppNavbar />
 			<div>

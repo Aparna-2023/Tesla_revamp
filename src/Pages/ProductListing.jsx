@@ -16,6 +16,7 @@ export const ProductListing = () => {
   const navigate = useNavigate();
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
+
   useEffect(() => {
     axios
       .get("/mockData.json")
@@ -32,14 +33,16 @@ export const ProductListing = () => {
   };
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch = product.model.toLowerCase().includes(searchQuery.toLowerCase());
+    const searchresult = product.model.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesModel = selectedModel ? product.model === selectedModel : true;
-    return matchesSearch && matchesModel;
+    return searchresult && matchesModel;
   });
+
   const handleModelSelect = (model) => {
     setSelectedModel(model);
-    setDropdownOpen(false); // Close dropdown after selection
+    setDropdownOpen(false);
   };
+
   return (
     <div className="product-listing">
       <div className="search-bar mb-3">
@@ -59,8 +62,8 @@ export const ProductListing = () => {
             onClick={toggle}
           ></DropdownToggle>
           <DropdownMenu>
-          <DropdownItem onClick={() => setSelectedModel("")}>
-              All 
+            <DropdownItem onClick={() => setSelectedModel("")}>
+              All
             </DropdownItem>
             <DropdownItem onClick={() => handleModelSelect("Model S")}>
               Model S

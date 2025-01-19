@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "model": "Model S",
+    "basePrice": "$74,990",
+    "colors": ["black", "red", "blue", "grey", "silver", "white"],
+    "wheels": [
+        {
+          "color": "black",
+          "image": "/images/Wheel-black.avif"
+        },
+        {
+          "color": "white",
+          "image": "/images/Wheel-White.avif"
+        }
+      ],
+    "priceAdditions": {
+      "color": {
+        "black": 0,
+        "red": 50,
+        "blue": 40,
+        "grey": 35,
+        "silver": 42,
+        "white": 45
+      },
+      "wheels": {
+        "black": 0,
+        "white": 20
+      }
+    }
+  },
+  {
+    "id": 2,
+    "model": "Model 3",
+    "basePrice": "$74,990",
+    "colors": ["black", "red", "blue", "grey", "silver", "white"],
+    "wheels": [
+        {
+          "color": "black",
+          "image": "/images/Wheel-Black.avif"
+        },
+        {
+          "color": "white",
+          "image": "/images/Wheel-White.avif"
+        }
+      ],
+    "priceAdditions": {
+      "color": {
+        "black": 0,
+        "red": 50,
+        "blue": 40,
+        "grey": 35,
+        "silver": 42,
+        "white": 45
+      },
+      "wheels": {
+        "black": 0,
+        "white": 20
+      }
+    }
+  }
+]

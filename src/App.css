@@ -1,11 +1,8 @@
-body {
-  margin: 0;
-  padding: 0;
+* {
   font-family: "Roboto", serif;
-  width: 100%;
 }
 
-/* Navbar Styles */
+
 .nav-item {
   margin: 0 10px;
 }
@@ -38,12 +35,10 @@ body {
 
 .nav-button {
   width: 100px;
-  /* height: 40px; */
   color: #FFFFFF;
   background-color: #585858;
 }
 
-/* Banner Styles */
 .banner-container {
   width: 100%;
   height: 90vh;
@@ -75,7 +70,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   font-style: italic;
-  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  */
   letter-spacing: 1px;
 }
 
@@ -283,7 +277,6 @@ body {
   font-weight: 600;
 }
 
-/* Vehicle List  Styles */
 .product-listing {
   height: 100vh;
   padding: 20px;
@@ -360,8 +353,8 @@ body {
 }
 
 
-/* -----Car Details Page Style------- */
 .car-details-container {
+  height: auto;
   padding: 20px 20px 0 20px;
 }
 
@@ -470,14 +463,38 @@ body {
   border: none;
   background-color: #d3d6d8;
 }
+.build-container{
+  width: 100%;
+  height: auto;
+}
 
-/* Responsive Design */
+.wheel-image{
+  width: 50px;
+  height: 50px;
+}
+
+.wheel-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
+.wheel-option {
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+.wheel-option.selected {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
 
 @media (max-width: 480px) {
-
-  /* .feature-item {
-    flex: 1 1 100%;
-  } */
   .banner-container {
     width: 100%;
     height: 70vh;
@@ -563,13 +580,5 @@ body {
   .search-input {
     width: 50%;
   }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* Styles for small desktops or large tablets */
-}
-
-@media (min-width: 1025px) and (max-width: 1440px) {
-  /* Styles for desktops and large screens */
 }
 
