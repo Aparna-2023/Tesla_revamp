@@ -4,6 +4,7 @@ import axios from "axios";
 import { Button, Row, Col } from "reactstrap";
 import { ModalContainer } from "../Components/Modal/ModalContainer";
 import { FeatureModal } from "./FeatureModal";
+import { CustomSpinner } from "../Components/Spinner/CustomSpinner";
 
 export const CarDetails = () => {
     const { id } = useParams();
@@ -12,8 +13,10 @@ export const CarDetails = () => {
     const [selectedColor, setSelectedColor] = useState("");
     const [currentImage, setCurrentImage] = useState("");
     const [isOpen, setIsOpen] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        setLoading(true);
         axios
             .get("/mockData.json")
             .then((response) => {
@@ -24,6 +27,9 @@ export const CarDetails = () => {
             })
             .catch((error) => {
                 console.error("Error fetching car details:", error);
+            })
+            .finally(() => {
+                setLoading(false);
             });
     }, [id]);
 
@@ -37,8 +43,16 @@ export const CarDetails = () => {
         navigate(`/vehicles/design/${car.id}`, { state: { car } });
     };
 
+    if (loading) {
+        return (
+            <div className="loading-container">
+                <CustomSpinner />
+            </div>
+        );
+    }
+
     if (!car) {
-        return <p>Loading...</p>;
+        return <p>Car details not found.</p>;
     }
 
     return (

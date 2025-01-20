@@ -11,6 +11,7 @@ export const BuildAndPrice = () => {
     const [selectedColor, setSelectedColor] = useState("");
     const [selectedWheel, setSelectedWheel] = useState("");
     const [currentImage, setCurrentImage] = useState("");
+    const [carPrice, setCarPrice] = useState("")
 
 
 
@@ -20,36 +21,61 @@ export const BuildAndPrice = () => {
             .then((response) => {
                 const carData = response.data.find((item) => item.id === parseInt(id));
                 setCarDetails(carData)
+                if (carData) {
+                    const basePrice = parseFloat(carData.basePrice.replace(/[^0-9.-]+/g, ""));
+                    const defaultColor = carData.colors[0];
+                    const defaultWheel = carData.wheels[0]?.color;
+
+                    setSelectedColor(defaultColor);
+                    setSelectedWheel(defaultWheel);
+
+                    setCurrentImage(
+                        `/images/${carData.model.toLowerCase().replace(" ", "-")}-${defaultColor.toLowerCase()}-wheel-${defaultWheel.toLowerCase()}.jpg`
+                    );
+
+                    const colorPrice = carData.priceAdditions.color[defaultColor] || 0;
+                    const wheelPrice = carData.priceAdditions.wheels[defaultWheel] || 0;
+                    setCarPrice(basePrice + colorPrice + wheelPrice);
+                }
             })
+            .catch((error) => {
+                console.error("Error fetching mock data:", error);
+            });
     }, [id])
 
-    console.log(car, "build-container");
 
     const handleColorChange = (color) => {
         setSelectedColor(color);
         const imageName = car?.model.toLowerCase().replace(" ", "-");
         setCurrentImage(`/images/${imageName}-${color.toLowerCase()}.jpg`);
+        const colorPrice = CarDetails.priceAdditions.color[color] || 0;
+        const wheelPrice = CarDetails.priceAdditions.wheels[selectedWheel] || 0;
+        const basePrice = parseFloat(CarDetails.basePrice.replace(/[^0-9.-]+/g, ""));
+        setCarPrice(basePrice + colorPrice + wheelPrice);
     };
 
-    // Handle wheel selection and update the car image
     const handleWheelChange = (wheelColor) => {
         setSelectedWheel(wheelColor);
         if (selectedColor) {
             const imageName = car?.model.toLowerCase().replace(" ", "-");
             setCurrentImage(`/images/${imageName}-${selectedColor.toLowerCase()}-wheel-${wheelColor.toLowerCase()}.jpg`);
         }
+        const colorPrice = CarDetails.priceAdditions.color[selectedColor] || 0;
+        const wheelPrice = CarDetails.priceAdditions.wheels[wheelColor] || 0;
+        const basePrice = parseFloat(CarDetails.basePrice.replace(/[^0-9.-]+/g, ""));
+        setCarPrice(basePrice + colorPrice + wheelPrice);
     };
+
+console.log(currentImage,"build-container");
 
     return (
 
         <div className="build-container">
             <Row>
-                {/* Image Section */}
                 <Col md={8} className="car-image">
-                {currentImage && <img src= {car?.image || currentImage} alt="Selected Car" className="selected-car-image" />}
+                    {currentImage && <img src={currentImage} alt="Selected Car" className="selected-car-image" />}
                 </Col>
 
-                {/* Details Section */}
                 <Col md={4} className="car-details">
                     <h2 className="text-center">{CarDetails?.model}</h2>
                     <div className="features-container">
@@ -113,8 +139,8 @@ export const BuildAndPrice = () => {
                         </div>
                     </div>
                     <div className="order-button-wrap">
-                        <h3>""</h3>
-                        <Button className="order-button">OrderNow</Button>
+                        <h3>${carPrice}</h3>
+                        <Button className="order-button">Order Now</Button>
                     </div>
                 </Col>
             </Row>

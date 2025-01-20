@@ -343,7 +343,13 @@
     background: none; 
   }
 
-
+  .spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; 
+  }
+  
 .no-data-message {
   text-align: center;
   font-size: 18px;
@@ -435,7 +441,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .order-button {
@@ -466,6 +472,7 @@
 .build-container{
   width: 100%;
   height: auto;
+  overflow-x: hidden;
 }
 
 .wheel-image{

@@ -7,17 +7,20 @@ import {
   DropdownMenu,
   DropdownToggle,
 } from "reactstrap";
+import { CustomSpinner } from "../Components/Spinner/CustomSpinner";
 
 export const ProductListing = () => {
   const [products, setProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState("");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const toggle = () => setDropdownOpen(!dropdownOpen);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("/mockData.json")
       .then((response) => {
@@ -25,6 +28,9 @@ export const ProductListing = () => {
       })
       .catch((error) => {
         console.error("Error fetching mock data:", error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
@@ -87,15 +93,17 @@ export const ProductListing = () => {
         </Dropdown>
         <i className="bi bi-arrow-clockwise" title="Reset" onClick={() => setSelectedModel("")}></i>
       </div>
-      {filteredProducts.length === 0 ? (
+      {loading ? (
+        <div className="spinner-wrapper">
+          <CustomSpinner />
+        </div>
+      ) : filteredProducts.length === 0 ? (
         <div className="no-data-message">No data found</div>
       ) : (
         <Row className="mt-4">
           {filteredProducts.map((product) => (
             <Col key={product.id} md={3} className="mb-4">
-              <div
-                className="product-card"
-              >
+              <div className="product-card">
                 <img
                   src={product.image}
                   alt={product.model}
@@ -118,6 +126,7 @@ export const ProductListing = () => {
           ))}
         </Row>
       )}
+
     </div>
   );
 };
