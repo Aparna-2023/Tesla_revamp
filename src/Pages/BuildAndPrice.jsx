@@ -66,10 +66,7 @@ export const BuildAndPrice = () => {
         setCarPrice(basePrice + colorPrice + wheelPrice);
     };
 
-console.log(currentImage,"build-container");
-
     return (
-
         <div className="build-container">
             <Row>
                 <Col md={8} className="car-image">
@@ -144,7 +141,6 @@ console.log(currentImage,"build-container");
                     </div>
                 </Col>
             </Row>
-
         </div>
     )
 }  
